@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript语法点</title>
+</head>
+<body>
+<script>
+    //一、用if...else计算某一天是一年中的第几天
+    /*function getTotalDay() {
+        var year=Number(prompt("请输入年份："));
+        var month=Number(prompt("请输入月份："));
+        var day=Number(prompt("请输入日期："));
+        var totalDay=0;
+        if (year%400==0||year%4==0&&year%100!=0){
+            twomonth=29;
+        } else{
+            twomonth=28;
+        }
+        if(month==1){
+            totalDay=day;
+        }else if (month==2){
+            totalDay=31+day;
+        } else if (month==3){
+            totalDay=31+twomonth+day;
+        } else if (month==4){
+            totalDay=31+twomonth+31+day;
+        } else if (month==5){
+            totalDay=31+twomonth+31+30+day;
+        } else if (month==6){
+            totalDay=31+twomonth+31+30+31+day;
+        } else if (month==7){
+            totalDay=31+twomonth+31+30+31+30+day;
+        } else if (month==8){
+            totalDay=31+twomonth+31+30+31+30+31+day
+        }else if (month==9){
+            totalDay=31+twomonth+31+30+31+30+31+31+day;
+        } else if (month==10){
+            totalDay=31+twomonth+31+30+31+30+31+31+30+day;
+        } else if (month==11){
+            totalDay=31+twomonth+31+30+31+30+31+31+30+31+day;
+        } else if (month==12){
+            totalDay=31+twomonth+31+30+31+30+31+31+30+31+30+day;
+        }
+        console.log(year+"年"+month+"月"+day+"日，是一年中的第"+totalDay+"天");
+    }
+    getTotalDay();*/
+
+    //二、用switch语句计算某一天是一年中的第几天
+    /*function total() {
+        var year=Number(prompt("请输入年份："));
+        var month=Number(prompt("请输入月份："));
+        var day=Number(prompt("请输入日期："));
+        var totalDay=0;
+        if (year%4==0&&year%100!=0||year%400==0){
+            twomonth=29;
+        } else{
+            twomonth=28;
+        }
+        switch (month-1) {
+            case 11:totalDay+=30;
+            case 10:totalDay+=31;
+            case 9:totalDay+=30;
+            case 8:totalDay+=31;
+            case 7:totalDay+=31;
+            case 6:totalDay+=30;
+            case 5:totalDay+=31;
+            case 4:totalDay+=30;
+            case 3:totalDay+=31;
+            case 2:totalDay+=twomonth;
+            case 1:totalDay+=31;
+        }
+        totalDay+=day;
+        alert(year+"年"+month+"月"+day+"日是："+year+"年的第"+totalDay+"天");
+    }
+    total();*/
+
+    //三、冒泡排序
+    /*function buubleSort(arr) {
+        for (var i=0;i<arr.length-1;i++){
+            for (var j=0;j<arr.length-1-i;j++){
+                if (arr[j]>arr[j+1]){
+                    var temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+
+        }
+        return arr
+    }
+    console.log(String(buubleSort([7,6,5,4,3,2,1])));*/
+
+    //四、删除数组中重复的元素
+    /*
+    *1、使用for循环删除数组中重复的元素
+    * *function unique1(arr) {
+        for (var i=0,result=[];i<arr.length;i++){
+            for (var j=0;j<result.length;j++){
+                if (arr[i]==result[j])break;
+            }
+            if (j==result.length)
+                result[result.length]=arr[i];
+        }
+        return result;
+    }
+    console.log(String(unique1([2,3,2,4,5,3])));*/
+    /*
+    * 2、使用关联数组
+    * function unique2(arr) {
+        for (var i=0,result=[],hash=[];i<arr.length;i++){
+            if (hash[arr[i]]==undefined){
+                result[result.length]=arr[i];
+                hash[arr[i]]=true;
+            }
+        }
+        return result;
+    }
+    console.log(String(unique2([2,3,2,5,3,4])));*/
+    //五、模拟爬虫查找网站可以跳转的网页数
+    /*var html="<link href=\"index.css\"/>\n" +
+        "<body>\n" +
+        "<a name=\"top\"></a>\n" +
+        "<h1>welcome</h1>\n" +
+        "<ul>\n" +
+        "<li><a class=\"active\" href=\"http://tmooc.cn\">go to tmooc</a></li>\n" +
+        "<li><a href=\"http://tedu.cn\" target=\"_blank\">go to tedu</a></li>\n" +
+        "</ul>\n" +
+        "</body>";
+    var reg=/<a\s*[^>]*?href="([^"]*?)"/ig;
+    //var arr;
+    // while ((arr=reg.exec(html))!=null){
+    //     console.log(arr[0],arr[1]);
+    // }
+    //如果仅关心分组的子内容，不关心完整的内容
+    while (reg.exec(html)!=null)
+        console.log(RegExp.$1);//RegExp.$n可获得本次找到的第n个分组的子内容*/
+    //六、使用正则表达式捕捉关键词
+    /*
+    * 1、捕捉聊天窗口含有微信的关键词
+    *while((prompt("发送信息：").search(/(微|w(ei)?|v|w)\s*(信|x(in)?|x)/))!=-1){
+        alert("包含敏感词汇！")
+    }
+    alert("发送成功！") */
+    /*2用正则表达式规范手机号格式
+    * var reg1=/(\+86|0086)?\s*1[3578]\d{9}/;
+    var input;
+    while (!reg1.test(prompt("请输入手机号："))) {
+        alert("手机号格式格式不符！")
+    }
+alert("输入成功！")*/
+
+
+</script>
+</body>
+</html>
